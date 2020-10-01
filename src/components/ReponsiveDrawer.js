@@ -21,7 +21,11 @@ import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import ThumbUpIcon from '@material-ui/icons/ThumbUpAlt';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import InputAdornment from "@material-ui/core/InputAdornment";
 import Toolbar from '@material-ui/core/Toolbar';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -72,6 +76,14 @@ const useStyles = makeStyles((theme) => ({
   },
   logoText: {
     fontSize: '22px'
+  },
+  toolbarItems: {
+    display: 'flex',
+   justifyContent: 'space-between',
+   width: '100%'
+  },
+  searchBox: {
+    width: '60%',
   }
 }));
 
@@ -140,9 +152,24 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Responsive drawer
-          </Typography>
+          <div className={classes.toolbarItems}>
+            <TextField 
+            placeholder="Search" 
+            variant="outlined" 
+            margin="dense" 
+            className={classes.searchBox} 
+            InputProps={{
+                endAdornment: (
+                <InputAdornment>
+                    <IconButton>
+                    <SearchIcon />
+                    </IconButton>
+                </InputAdornment>
+                )
+             }}
+            />
+            <Button variant="outlined" color="primary">Sign in</Button>
+          </div>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
