@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
+    backgroundColor: 'white',
+    color: 'grey',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      backgroundColor: 'white',
-      color: 'grey'
+      marginLeft: drawerWidth
     },
   },
   menuButton: {
@@ -60,6 +60,19 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  brand: {
+   display: 'flex',
+   justifyContent: 'center',
+   alignItems: 'center',
+   height: '64px'
+  },
+  logo: {
+      maxWidth: '45px',
+      marginRight: '5px'
+  },
+  logoText: {
+    fontSize: '22px'
+  }
 }));
 
 function ResponsiveDrawer(props) {
@@ -74,7 +87,12 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar} >
+        <div className={classes.brand}>
+            <img src="../assets/youtube.svg.png" alt="logo" className={classes.logo} />
+            <div className={classes.logoText}>YouTube</div>
+        </div>
+      </div>
       <Divider />
       <List>
         {['Home', 'Trending', 'Subscriptions'].map((text, index) => (
