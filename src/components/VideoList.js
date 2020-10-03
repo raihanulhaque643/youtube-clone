@@ -23,23 +23,7 @@ class VideoList extends Component {
     render() {
         return (
             <div>
-            <Grid container spacing={4}>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <VideoListItem />
-                </Grid>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <VideoListItem />
-                </Grid>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <VideoListItem />
-                </Grid>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <VideoListItem />
-                </Grid>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <VideoListItem />
-                </Grid>
-            </Grid>
+                <VideoListItem videoInfo={this.state.videos} />
             </div>
         )
     }
