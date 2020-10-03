@@ -27,7 +27,7 @@ import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import VideoList from './VideoList';
+import VideoList from '../VideoList/VideoList';
 
 const drawerWidth = 240;
 

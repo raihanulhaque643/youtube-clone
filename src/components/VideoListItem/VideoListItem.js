@@ -1,9 +1,7 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
-import '../components/video-list-item.css';
-
-import '../components/video-list-item.css'
+import './video-list-item.css';
 
 const VideoListItem = (props) => {
     console.log(props.videoInfo)
