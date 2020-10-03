@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import youtube from '../api/youtube';
+import Grid from '@material-ui/core/Grid';
+import VideoListItem from './VideoListItem';
 import axios from 'axios';
 
 class VideoList extends Component {
@@ -22,7 +23,23 @@ class VideoList extends Component {
     render() {
         return (
             <div>
-                <h1>VideoList Component</h1>
+            <Grid container spacing={4}>
+                <Grid item xs={12} sm={12} md={4} lg={3}>
+                    <VideoListItem />
+                </Grid>
+                <Grid item xs={12} sm={12} md={4} lg={3}>
+                    <VideoListItem />
+                </Grid>
+                <Grid item xs={12} sm={12} md={4} lg={3}>
+                    <VideoListItem />
+                </Grid>
+                <Grid item xs={12} sm={12} md={4} lg={3}>
+                    <VideoListItem />
+                </Grid>
+                <Grid item xs={12} sm={12} md={4} lg={3}>
+                    <VideoListItem />
+                </Grid>
+            </Grid>
             </div>
         )
     }
