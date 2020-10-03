@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
-import VideoListItem from './VideoListItem';
+import VideoListItem from '../VideoListItem/VideoListItem';
 import axios from 'axios';
 
 class VideoList extends Component {

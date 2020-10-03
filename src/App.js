@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ResponsiveDrawer from './components/ReponsiveDrawer';
+import ResponsiveDrawer from './components/ResponsiveDrawer.js/ReponsiveDrawer';
 
 class App extends Component {
   render() {
