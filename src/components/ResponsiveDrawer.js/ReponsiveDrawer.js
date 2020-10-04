@@ -28,7 +28,6 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
 
 import VideoList from '../VideoList/VideoList';
-import YouTube from '@u-wave/react-youtube';
 
 const drawerWidth = 240;
 
