@@ -8,7 +8,7 @@ class VideoList extends Component {
     }
 
     async componentDidMount() {
-       await axios.get('https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBDkXfYVkt0ibhjbP5fQNrqNIRV-6wQeEU&part=snippet,contentDetails&regionCode=bd&chart=mostPopular&maxResults=20')
+       await axios.get('https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBDkXfYVkt0ibhjbP5fQNrqNIRV-6wQeEU&part=snippet,contentDetails&regionCode=bd&chart=mostPopular&maxResults=20&videoCategoryId=10')
       .then(res => {
         const videos = res.data.items;
         this.setState({ videos });

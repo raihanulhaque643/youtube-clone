@@ -1,5 +1,5 @@
 The first component called Reponsive Drawer is taken from Material UI.
-The VideoList component uses the Youtube Data APi v3 to get a list of most popular videos based on region. (bd is this case.)
+The VideoList component uses the Youtube Data APi v3 to get a list of most popular videos based on regionCode(bd) and videoCategoryId(10).
 For the youtube player component the following was used: 
 @u-wave/react-youtube(https://github.com/u-wave/react-youtube)
 
