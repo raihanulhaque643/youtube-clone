@@ -2,7 +2,9 @@
     height: 280px;
     width: 250px;
     margin: 15px 0px;
+    cursor: pointer;
 }
+
 
 .details * {
     margin: 0;

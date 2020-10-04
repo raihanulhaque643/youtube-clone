@@ -17,6 +17,7 @@ class VideoListItem extends React.Component {
         this.setState(state => ({
             videoId: key
           }));
+        document.documentElement.scrollTop = 0;
     }
     render() {
         const videoItems = this.props.videoInfo.map(item => 
