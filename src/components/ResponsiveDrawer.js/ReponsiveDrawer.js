@@ -28,7 +28,10 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
 
 import VideoList from '../VideoList/VideoList';
+<<<<<<< HEAD:src/components/ResponsiveDrawer.js/ReponsiveDrawer.js
 import YouTube from '@u-wave/react-youtube';
+=======
+>>>>>>> 1909c1e8f2a3cdc7232a9ecb5cb4acce50b3dc4e:src/components/ReponsiveDrawer.js
 
 const drawerWidth = 240;
 
