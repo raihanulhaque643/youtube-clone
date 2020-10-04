@@ -24,10 +24,11 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Toolbar from '@material-ui/core/Toolbar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
 
 import VideoList from '../VideoList/VideoList';
+import YouTube from '@u-wave/react-youtube';
 
 const drawerWidth = 240;
 
@@ -68,7 +69,8 @@ const useStyles = makeStyles((theme) => ({
    display: 'flex',
    justifyContent: 'center',
    alignItems: 'center',
-   height: '64px'
+   height: '64px',
+   cursor: 'pointer'
   },
   logo: {
       maxWidth: '45px',
@@ -92,6 +94,7 @@ function ResponsiveDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const history = useHistory();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -205,7 +208,10 @@ function ResponsiveDrawer(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <VideoList />
+        <div className={classes.innerContainer}>
+          {/* <YouTube height="500px" width="870px" video="BD8rt6MaB2s"/> */}
+          <VideoList />
+        </div>
       </main>
     </div>
   );
