@@ -34,7 +34,7 @@ class VideoListItem extends React.Component {
         )
         return (
             <div>
-            <YouTube height="500px" width="870px" video={this.state.videoId}/>
+            <YouTube height="500px" width="870px" video={this.state.videoId} autoplay/>
             <Grid container>
             {videoItems}
             </Grid>
