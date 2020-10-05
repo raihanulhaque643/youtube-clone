@@ -140,7 +140,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <div className={classes.toolbar} >
-        <div className={classes.brand}>
+        <div className={classes.brand} onClick={() => history.push('/')}>
             <img src="../assets/youtube.svg.png" alt="logo" className={classes.logo} />
             <div className={classes.logoText}>YouTube</div>
         </div>
