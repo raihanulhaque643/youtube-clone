@@ -99,6 +99,44 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  function pushFirstBlockRoute (index) {
+    switch(index){
+      case 0:
+        history.push('/');
+        break;
+      case 1:
+        history.push('/trending');
+        break;
+      case 2:
+        history.push('/subscriptions');
+        break;
+      default:
+        history.push('/');
+    }
+  };
+
+  function pushSecondBlockRoute (index) {
+    switch(index){
+      case 0:
+        history.push('library');
+        break;
+      case 1:
+        history.push('/history');
+        break;
+      case 2:
+        history.push('/yourvideos');
+        break;
+      case 3:
+        history.push('/watchlater');
+        break;
+      case 4:
+        history.push('/likedvideos');
+        break;
+      default:
+        history.push('/');
+    }
+  }
+
   const drawer = (
     <div>
       <div className={classes.toolbar} >
@@ -110,9 +148,9 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {['Home', 'Trending', 'Subscriptions'].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItem button key={text} onClick={() => pushFirstBlockRoute(index)}>
             <ListItemIcon>
-            {index === 0 && <HomeIcon />}
+            {index === 0 && <HomeIcon /> }
             {index === 1 && <WhatshotIcon />}
             {index === 2 && <SubscriptionsIcon />}
             </ListItemIcon>
@@ -123,7 +161,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {['Library', 'History', 'Your videos', 'Watch later', 'Liked videos'].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItem button key={text} onClick={() => pushSecondBlockRoute(index)} >
             <ListItemIcon>
                 {index === 0 && <VideoLibraryIcon />}
                 {index === 1 && <HistoryIcon />}
@@ -208,8 +246,36 @@ function ResponsiveDrawer(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <div className={classes.innerContainer}>
-          {/* <YouTube height="500px" width="870px" video="BD8rt6MaB2s"/> */}
-          <VideoList />
+          {/* <VideoList /> */}
+          <Switch>
+            <Route exact path="/">
+              <VideoList />
+            </Route>
+            <Route exact path="/trending">
+              <h1>Trending Component goes here...</h1>
+            </Route>
+            <Route exact path="/subscriptions">
+              <h1>Subscriptions Component goes here...</h1>
+            </Route>
+            <Route exact path="/library">
+              <h1>Library Component goes here...</h1>
+            </Route>
+            <Route exact path="/history">
+              <h1>History Component goes here...</h1>
+            </Route>
+            <Route exact path="/yourvideos">
+              <h1>Your Videos Component goes here...</h1>
+            </Route>
+            <Route exact path="/watchlater">
+              <h1>Watch Later Component goes here...</h1>
+            </Route>
+            <Route exact path="/likedvideos">
+              <h1>Liked Videos Component goes here...</h1>
+            </Route>
+            <Route path="">
+              <h1>Eror 404! Component not found</h1>
+            </Route>
+          </Switch>
         </div>
       </main>
     </div>
