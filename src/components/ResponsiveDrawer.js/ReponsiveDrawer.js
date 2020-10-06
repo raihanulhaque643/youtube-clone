@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: 'white',
     color: 'grey',
+    height: '64px',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth
@@ -82,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarItems: {
     display: 'flex',
    justifyContent: 'space-between',
+   alignItems: 'center',
    width: '100%'
   },
   searchBox: {
@@ -209,12 +211,13 @@ function ResponsiveDrawer(props) {
                 )
              }}
             />
-            <Button 
+            <SignIn />
+            {/* <Button 
             variant="outlined" 
             color="primary"
             onClick={() => history.push('/signin')}
             >
-            Sign in</Button>
+            Sign in</Button> */}
           </div>
         </Toolbar>
       </AppBar>
@@ -277,9 +280,6 @@ function ResponsiveDrawer(props) {
             </Route>
             <Route exact path="/likedvideos">
               <h1>Liked Videos Component goes here...</h1>
-            </Route>
-            <Route exact path="/signin">
-              <SignIn />
             </Route>
             <Route path="">
               <h1>Eror 404! Component not found</h1>

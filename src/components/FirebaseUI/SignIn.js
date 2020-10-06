@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
+import Button from '@material-ui/core/Button';
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -21,18 +22,13 @@ const uiConfig = {
 
 const signOut = () => {
     firebase.auth().signOut()
-    .then(alert('Log out successful'))
+    .then(console.log('Log out successful'))
 }
 
 const SignIn = () => {
     useEffect(() => {
         const authObserver = firebase.auth().onAuthStateChanged((user) => {
             setUser(user);
-            if(user){
-                localStorage.setItem('user', user.email);
-            } else {
-                localStorage.removeItem('user')
-            }
         });
         return authObserver;
     })
@@ -42,16 +38,23 @@ const SignIn = () => {
         return (
             <>
                 <p>
-                    Welcome, {user.displayName} <br/>
-                    <small>{user.email}</small> <br/>
-                    <button onClick={() => signOut()}>Sign out</button>
+                    Welcome, {user.displayName}{' '} 
+                    {/* <small>{user.email}</small>  */}
+                    <Button
+                    variant="outlined"
+                    color="primary"
+                     onClick={() => signOut()}>Sign out</Button>
                 </p>
             </>
         )
     } else {
         return (
             <div>
-                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                <StyledFirebaseAuth 
+                uiConfig={uiConfig} 
+                firebaseAuth={firebase.auth()} 
+                style={{margin: '0px'}}
+                />
             </div>
         )
     }
