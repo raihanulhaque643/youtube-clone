@@ -27,6 +27,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
 
+import SignIn from '../FirebaseUI/SignIn';
 import VideoList from '../VideoList/VideoList';
 
 const drawerWidth = 240;
@@ -208,7 +209,12 @@ function ResponsiveDrawer(props) {
                 )
              }}
             />
-            <Button variant="outlined" color="primary">Sign in</Button>
+            <Button 
+            variant="outlined" 
+            color="primary"
+            onClick={() => history.push('/signin')}
+            >
+            Sign in</Button>
           </div>
         </Toolbar>
       </AppBar>
@@ -271,6 +277,9 @@ function ResponsiveDrawer(props) {
             </Route>
             <Route exact path="/likedvideos">
               <h1>Liked Videos Component goes here...</h1>
+            </Route>
+            <Route exact path="/signin">
+              <SignIn />
             </Route>
             <Route path="">
               <h1>Eror 404! Component not found</h1>
