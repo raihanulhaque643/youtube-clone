@@ -196,7 +196,8 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <div className={classes.toolbarItems}>
-            <TextField 
+            <TextField
+            disabled
             placeholder="Search" 
             variant="outlined" 
             margin="dense" 
@@ -212,12 +213,6 @@ function ResponsiveDrawer(props) {
              }}
             />
             <SignIn />
-            {/* <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={() => history.push('/signin')}
-            >
-            Sign in</Button> */}
           </div>
         </Toolbar>
       </AppBar>
